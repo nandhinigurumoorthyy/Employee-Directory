@@ -122,7 +122,7 @@ renderCards()
 });
 
 function deleteEmployee(id) {
-  if (confirm("Are you sure you want to delete this employee?")) {
+  if (confirm("Confirm deletion of this employee?")) {
     employees = employees.filter(emp => emp.id !== id);
     filteredEmployees = [...employees];
     localStorage.setItem("employeesData", JSON.stringify(employees));
