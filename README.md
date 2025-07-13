@@ -3,6 +3,11 @@
 A responsive and interactive Employee Directory built using **HTML**, **CSS**, **Vanilla JavaScript**, and **Freemarker templating** (optional for dynamic rendering). This application allows users to view, add, edit, delete, filter, sort, and search employee details — all stored locally in the browser via `localStorage`.
 
 ---
+## 🔗 Live Demo
+
+👉 **[View Live Site](https://employee-directory-web-application.netlify.app/)**  
+
+---
 
 ## 🔧 Setup & Run Instructions
 
