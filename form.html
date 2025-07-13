@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Add/Edit Employee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .modal-container h2 {
+      margin-top: 0;
+    }
+
+    .modal-container label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .modal-container input,
+    .modal-container select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .form-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+    }
+
+    .form-actions button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100px;
+      text-align: center;
+    }
+
+    .email-department {
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .email-department .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .email-department .email-group,
+    .email-department .department-group {
+      width: 45%;
+    }
+
+    .form-actions .cancel-btn {
+      background-color: #fff;
+      border: solid black 1px;
+    }
+
+    .form-actions .add-btn {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 24px;
+      color: red;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .modal-container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="modal-container">
+    <h2 id="formTitle"></h2>
+    <form id="employeeForm">
+      <label for="firstName">First name</label>
+      <input type="text" id="firstName" name="firstName" required />
+
+      <label for="lastName">Last name</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <div class="email-department">
+        <div class="form-group email-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group department-group">
+          <label for="department">Department</label>
+          <select id="department" name="department" required>
+            <option value=""></option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="role">Role</label>
+      <select id="role" name="role" required>
+        <option value=""></option>
+        <option value="Manager">Manager</option>
+        <option value="Developer">Developer</option>
+        <option value="Analyst">Analyst</option>
+      </select>
+
+      <div class="form-actions">
+        <button type="button" class="cancel-btn" onclick="window.location.href='index.html'">Cancel</button>
+        <button type="submit" class="add-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="scripts/form-handler.js"></script>
+
+</body>
+
+</html>

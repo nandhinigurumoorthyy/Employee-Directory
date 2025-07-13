@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="icon" type="image/x-icon" href="/assets/logo.jpg">
+</head>
+
+<body>
+  <div class="page-container">
+  <header>
+    <div class="toolbar">
+      <h1>Employee Directory</h1>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by name or email" />
+      </div>
+      <div class="filter-box"><button onclick="openFilter()" id="filter-button">Filter</button></div>
+    </div>
+
+  </header>
+
+
+  <div class="second-header">
+    <div class="second-header-1">
+      <div>
+        <label for="sortSelect">Sort:</label>
+        <select id="sortSelect">
+          <option value="">--Select--</option>
+          <option value="firstName">First Name</option>
+          <option value="department">Department</option>
+        </select>
+      </div>
+
+      <div class="page-size">
+        <label for="pageSizeSelect">Show:</label>
+        <select id="pageSizeSelect">
+          <option value="10" selected>10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+    </div>
+
+    <a href="form.html" id="add-employee-button"><button>Add Employee</button></a>
+  </div>
+
+  <aside id="filterSidebar" class="filter-sidebar hidden">
+  <h3>Filter Employees</h3>
+
+  <div class="filter-row">
+    <label for="filterFirstName">First Name</label>
+    <input type="text" id="filterFirstName" />
+  </div>
+
+  <div class="filter-row">
+    <label for="filterDepartment">Department</label>
+    <input type="text" id="filterDepartment" />
+  </div>
+
+  <div class="filter-row">
+    <label for="filterRole">Role</label>
+    <input type="text" id="filterRole" />
+  </div>
+
+  <button onclick="applyFilter()">Apply</button>
+  <button onclick="closeFilter()">Reset</button>
+</aside>
+
+
+  <main>
+    <div class="employee-grid" id="employeeGrid"></div>
+    <div id="noResults" style="display: none; text-align: center; margin-top: 1rem; font-weight: bold;">
+  No result found
+</div>
+    <div id="endOfListMessage" style="text-align: center; padding: 1rem; color: gray; display: none;">
+      You've reached the end of the list.
+    </div>
+  </main>
+</div>
+  <footer class="footer">
+    © 2025 Employee Directory App. All rights reserved.
+  </footer>
+
+  <script>
+    window.employeesData = [
+      {
+        id: 1,
+        firstName: "Alice",
+        lastName: "Smith",
+        email: "alice@example.com",
+        department: "HR",
+        role: "Manager",
+      },
+      {
+        id: 2,
+        firstName: "Bob",
+        lastName: "Johnson",
+        email: "bob@example.com",
+        department: "IT",
+        role: "Developer",
+      },
+      {
+        id: 3,
+        firstName: "Charlie",
+        lastName: "Lee",
+        email: "charlie@example.com",
+        department: "Finance",
+        role: "Analyst",
+      },
+    ];
+  </script>
+
+  <script src="scripts/app.js"></script>
+
+</body>
+
+</html>
